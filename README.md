@@ -12,4 +12,5 @@
 
 ### `npm start`
 
+## Пример работы приложения
 ![Пример работы приложения](https://user-images.githubusercontent.com/35634279/161993594-0bf34d84-3301-4acf-a5f9-125169a85384.png)
