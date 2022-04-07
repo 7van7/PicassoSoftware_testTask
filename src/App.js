@@ -14,8 +14,16 @@ function App() {
         loadcompanies();
         console.log(masOfcomp)
     }
+
+    const[isopen, setisOpean]= useState(true)
+
     const clickhandler = (e)=>{
         setName(e.target.textContent)
+        setisOpean(!isopen)
+    }
+
+    const inputClick=()=>{
+        setisOpean(true)
     }
 
     return (
@@ -29,17 +37,19 @@ function App() {
                     className="search_space"
                     autoComplete="off"
                     onChange={e => changeHandler(e.target.value)}
-                    value={name} />
+                    value={name}
+                    onClick={inputClick}
+                />
 
                 <ul className="autocomplete_list">
 
                     {masOfcomp.map((company)=>{
-                        if (name) {
+                        if (name && isopen) {
                             return <li className="list_item" onClick={clickhandler}>
                                 <img src={company.logo} alt="logo"/>
                                 <div className="namecomp">
                                     <p>{company.name}</p>
-                                    <a href={company.domain}>{company.domain}</a>
+                                    <a href="">{company.domain}</a>
                                 </div>
                             </li>
                         }
